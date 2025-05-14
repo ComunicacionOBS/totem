@@ -392,9 +392,9 @@ function manualBackToMenu() {
         function speakText(text) {
             stopSpeaking();
             const utterance = new SpeechSynthesisUtterance(text);
-            utterance.lang = 'es-MX';
-            utterance.rate = 0.9;
-            utterance.pitch = 1.5;
+            utterance.lang = 'es-Es';
+            utterance.rate = 1.0;
+            utterance.pitch = 1.0;
             speechSynthesis.speak(utterance);
         }
         
