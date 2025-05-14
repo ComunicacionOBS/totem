@@ -251,9 +251,13 @@
         <button class="btn btn-primary menu-btn" onclick="showDirection('admin')" aria-label="Administración">
             <i class="fas fa-clipboard-list" aria-hidden="true"></i> Administración
         </button>
-        <button class="btn btn-primary menu-btn" onclick="showDirection('promo')" aria-label="Promocionales de la Salud">
+        <button class="btn btn-primary menu-btn" onclick="showDirection('promo')" aria-label="Promoción de la Salud">
             <i class="fas fa-heartbeat" aria-hidden="true"></i> Promoción de la Salud
         </button>
+    </button>
+    <button class="btn btn-primary menu-btn" onclick="showDirection('promo')" aria-label="Comunicación">
+        <i class="fas fa-heartbeat" aria-hidden="true"></i> Comunicación
+    </button>
     </div>
 
     <!-- Direcciones -->
@@ -317,6 +321,12 @@
         <i class="fas fa-arrow-up direction-icon" aria-hidden="true"></i>
         <h2>Promoción de la Salud</h2>
         <p class="direction-text">Por favor suba las gradas hacia el piso 1, gire a su izquierda y diríjase al área de promoción de la salud.</p>
+        <button class="btn btn-warning btn-back" onclick="backToMenu()">Volver al menú</button>
+    </div>
+    <div class="direction-container" id="promoDirection">
+        <i class="fas fa-arrow-up direction-icon" aria-hidden="true"></i>
+        <h2>Promoción de la Salud</h2>
+        <p class="direction-text">Por favor suba las gradas hacia el piso 1, gire a su izquierda y diríjase al área de comunicación.</p>
         <button class="btn btn-warning btn-back" onclick="backToMenu()">Volver al menú</button>
     </div>
 
