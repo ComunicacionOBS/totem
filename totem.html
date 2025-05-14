@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,18 +13,18 @@
     <style>
         :root {
             --ucr-blue: #0056b3;
-            --ucr-light-blue:  #0056b3;
+            --ucr-light-blue: #0056b3;
             --ucr-gold: #f6b221;
             --ucr-light-gray: #f8f9fa;
         }
-        
+
         body {
             font-family: 'Helvetica Neue', Arial, sans-serif;
             background-color: var(--ucr-light-gray);
             color: #333;
             line-height: 1.6;
         }
-        
+
         .header {
             background-color: var(--ucr-blue);
             color: white;
@@ -31,19 +32,19 @@
             margin-bottom: 2rem;
             border-bottom: 5px solid var(--ucr-gold);
         }
-        
+
         .header h1 {
             font-weight: 700;
             font-size: 3.2rem;
         }
-        
+
         .menu-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1rem;
             margin-bottom: 3rem;
         }
-        
+
         .menu-btn {
             background-color: var(--ucr-light-blue);
             border: none;
@@ -57,18 +58,19 @@
             justify-content: center;
             transition: all 0.3s ease;
         }
-        
-        .menu-btn:hover, .menu-btn:focus {
+
+        .menu-btn:hover,
+        .menu-btn:focus {
             background-color: var(--ucr-blue);
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
-        
+
         .menu-btn i {
             font-size: 2rem;
             margin-bottom: 0.5rem;
         }
-        
+
         .direction-container {
             display: none;
             background-color: white;
@@ -80,25 +82,25 @@
             text-align: center;
             border-top: 5px solid var(--ucr-gold);
         }
-        
+
         .direction-icon {
             font-size: 7rem;
             color: var(--ucr-blue);
             margin-bottom: 1rem;
         }
-        
+
         .direction-text {
             font-size: 3.2rem;
             margin: 1.5rem 0;
         }
-        
+
         .btn-back {
             background-color: var(--ucr-gold);
             color: #333;
             font-weight: 600;
             padding: 0.5rem 2rem;
         }
-        
+
         .footer {
             background-color: var(--ucr-blue);
             color: white;
@@ -106,14 +108,14 @@
             margin-top: 3rem;
             text-align: center;
         }
-        
+
         .accessibility-bar {
             background-color: #333;
             color: white;
             padding: 0.5rem 0;
             text-align: right;
         }
-        
+
         .accessibility-btn {
             background: none;
             border: none;
@@ -121,11 +123,11 @@
             margin-left: 1rem;
             cursor: pointer;
         }
-        
+
         .accessibility-btn:hover {
             color: var(--ucr-gold);
         }
-        
+
         #fullscreen-btn {
             position: fixed;
             bottom: 20px;
@@ -136,9 +138,9 @@
             padding: 0.5rem 1rem;
             border-radius: 5px;
             cursor: pointer;
-            z-index: 1000; 
+            z-index: 1000;
         }
-        
+
         .fullscreen-message {
             display: none;
             position: fixed;
@@ -152,53 +154,55 @@
             z-index: 1000;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
         }
-        
+
         /* Estilo para elementos enfocados para mejor accesibilidad */
-        button:focus, a:focus {
+        button:focus,
+        a:focus {
             outline: 3px solid var(--ucr-gold);
             outline-offset: 3px;
         }
-        
+
         /* Texto aumentado */
         .text-large {
             font-size: 1.3rem;
         }
-        
+
         .text-xlarge {
             font-size: 1.6rem;
         }
-        
+
         /* Alto contraste */
         .high-contrast {
             background-color: black !important;
             color: white !important;
         }
-        
+
         .high-contrast .header,
         .high-contrast .footer {
             background-color: black !important;
             color: yellow !important;
             border-color: yellow !important;
         }
-        
+
         .high-contrast .menu-btn {
             background-color: #333 !important;
             color: yellow !important;
             border: 2px solid yellow !important;
         }
-        
+
         .high-contrast .direction-container {
             background-color: black !important;
             color: white !important;
             border-color: yellow !important;
         }
-        
+
         .high-contrast .btn-back {
             background-color: yellow !important;
             color: black !important;
         }
     </style>
 </head>
+
 <body>
     <!-- Barra de accesibilidad -->
     <div class="accessibility-bar">
@@ -221,7 +225,7 @@
 
     <div class="header text-center">
         <div class="container">
-            
+
             <h1 id="mainTitle">Seleccioná el área que te interesa y te mostraremos su ubicación</h1>
         </div>
     </div>
@@ -236,7 +240,8 @@
         <button class="btn btn-primary menu-btn" onclick="showDirection('pharmacy')" aria-label="Área de Farmacia">
             <i class="fas fa-pills" aria-hidden="true"></i> Área de Farmacia
         </button>
-        <button class="btn btn-primary menu-btn" onclick="showDirection('lab')" aria-label="Área de Laboratorio Clínico">
+        <button class="btn btn-primary menu-btn" onclick="showDirection('lab')"
+            aria-label="Área de Laboratorio Clínico">
             <i class="fas fa-microscope" aria-hidden="true"></i> Área de Laboratorio Clínico
         </button>
         <button class="btn btn-primary menu-btn" onclick="showDirection('blood')" aria-label="Área de Banco de Sangre">
@@ -251,14 +256,16 @@
         <button class="btn btn-primary menu-btn" onclick="showDirection('admin')" aria-label="Administración">
             <i class="fas fa-clipboard-list" aria-hidden="true"></i> Administración
         </button>
+
         <button class="btn btn-primary menu-btn" onclick="showDirection('promo')" aria-label="Promoción de la Salud">
             <i class="fas fa-heartbeat" aria-hidden="true"></i> Promoción de la Salud
         </button>
-    </button>
-    <button class="btn btn-primary menu-btn" onclick="showDirection('promo')" aria-label="Comunicación">
-        <i class="fas fa-heartbeat" aria-hidden="true"></i> Comunicación
-    </button>
+
+        <button class="btn btn-primary menu-btn" onclick="showDirection('comunic')" aria-label="Comunicación">
+            <i class="fas fa-solid fa-camera" aria-hidden="true"></i> Comunicación
+        </button>
     </div>
+
 
     <!-- Direcciones -->
     <div class="direction-container" id="medicalDirection">
@@ -285,21 +292,24 @@
     <div class="direction-container" id="labDirection">
         <i class="fas fa-arrow-down direction-icon" aria-hidden="true"></i>
         <h2>Área de Laboratorio Clínico</h2>
-        <p class="direction-text">Por favor baje las gradas y diríjase al piso -1, luego gire a su izquierda y preséntese en recepción del laboratorio clínico.</p>
+        <p class="direction-text">Por favor baje las gradas y diríjase al piso -1, luego gire a su izquierda y
+            preséntese en recepción del laboratorio clínico.</p>
         <button class="btn btn-warning btn-back" onclick="backToMenu()">Volver al menú</button>
     </div>
 
     <div class="direction-container" id="bloodDirection">
         <i class="fas fa-arrow-down direction-icon" aria-hidden="true"></i>
         <h2>Área de Banco de Sangre</h2>
-        <p class="direction-text">Por favor baje las gradas y diríjase al piso -1, luego gire a su izquierda y preséntese en recepción del laboratorio clínico.</p>
+        <p class="direction-text">Por favor baje las gradas y diríjase al piso -1, luego gire a su izquierda y
+            preséntese en recepción del laboratorio clínico.</p>
         <button class="btn btn-warning btn-back" onclick="backToMenu()">Volver al menú</button>
     </div>
 
     <div class="direction-container" id="dentalDirection">
         <i class="fas fa-arrow-down direction-icon" aria-hidden="true"></i>
         <h2>Área de Odontología</h2>
-        <p class="direction-text">Por favor baje las gradas y diríjase al piso -1, luego gire a su izquierda y preséntese en recepción de odontología.</p>
+        <p class="direction-text">Por favor baje las gradas y diríjase al piso -1, luego gire a su izquierda y
+            preséntese en recepción de odontología.</p>
         <button class="btn btn-warning btn-back" onclick="backToMenu()">Volver al menú</button>
     </div>
 
@@ -313,20 +323,24 @@
     <div class="direction-container" id="adminDirection">
         <i class="fas fa-arrow-up direction-icon" aria-hidden="true"></i>
         <h2>Administración</h2>
-        <p class="direction-text">Por favor suba las gradas hacia el piso 1, gire a su izquierda e ingrese al área administrativa.</p>
+        <p class="direction-text">Por favor suba las gradas hacia el piso 1, gire a su izquierda e ingrese al área
+            administrativa.</p>
         <button class="btn btn-warning btn-back" onclick="backToMenu()">Volver al menú</button>
     </div>
 
     <div class="direction-container" id="promoDirection">
         <i class="fas fa-arrow-up direction-icon" aria-hidden="true"></i>
         <h2>Promoción de la Salud</h2>
-        <p class="direction-text">Por favor suba las gradas hacia el piso 1, gire a su izquierda y diríjase al área de promoción de la salud.</p>
+        <p class="direction-text">Por favor suba las gradas hacia el piso 1, gire a su izquierda y diríjase al área de
+            promoción de la salud.</p>
         <button class="btn btn-warning btn-back" onclick="backToMenu()">Volver al menú</button>
     </div>
-    <div class="direction-container" id="promoDirection">
+
+    <div class="direction-container" id="comunicDirection">
         <i class="fas fa-arrow-up direction-icon" aria-hidden="true"></i>
-        <h2>Promoción de la Salud</h2>
-        <p class="direction-text">Por favor suba las gradas hacia el piso 1, gire a su izquierda y diríjase al área de comunicación.</p>
+        <h2>Comunicación</h2>
+        <p class="direction-text">Por favor suba las gradas hacia el piso 1, gire a su izquierda y diríjase al área de
+            Cominicación.</p>
         <button class="btn btn-warning btn-back" onclick="backToMenu()">Volver al menú</button>
     </div>
 
@@ -346,59 +360,59 @@
     <!-- Bootstrap JS y dependencias -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-      let menuTimeout; // Variable para almacenar el timeout
+        let menuTimeout; // Variable para almacenar el timeout
 
-// Funcionalidad para mostrar direcciones
-function showDirection(area) {
-    // Cancelar el timeout anterior si existe
-    if (menuTimeout) {
-        clearTimeout(menuTimeout);
-    }
-    
-    // Ocultar menú y mostrar la dirección seleccionada
-    document.getElementById('menuContainer').style.display = 'none';
-    document.getElementById(area + 'Direction').style.display = 'block';
-    
-    // Detener speech anterior y leer nuevo contenido
-    stopSpeaking();
-    speakText(document.getElementById(area + 'Direction').innerText.replace('Volver al menú', ''));
-    
-    // Iniciar nuevo timeout (10 segundos para volver al menú)
-    menuTimeout = setTimeout(backToMenu, 10000);
-}
+        // Funcionalidad para mostrar direcciones
+        function showDirection(area) {
+            // Cancelar el timeout anterior si existe
+            if (menuTimeout) {
+                clearTimeout(menuTimeout);
+            }
 
-function backToMenu() {
-    // Cancelar el timeout si existe
-    if (menuTimeout) {
-        clearTimeout(menuTimeout);
-        menuTimeout = null;
-    }
-    
-    // Ocultar todas las direcciones
-    const directions = document.querySelectorAll('.direction-container');
-    directions.forEach(direction => {
-        direction.style.display = 'none';
-    });
-    
-    // Mostrar menú principal
-    document.getElementById('menuContainer').style.display = 'grid';
-    
-    // Detener speech y leer texto del menú
-    stopSpeaking();
-    speakText(document.getElementById('mainTitle').innerText + '. ' + document.getElementById('subTitle').innerText);
-}
+            // Ocultar menú y mostrar la dirección seleccionada
+            document.getElementById('menuContainer').style.display = 'none';
+            document.getElementById(area + 'Direction').style.display = 'block';
 
-// También deberías llamar a clearTimeout cuando el usuario vuelva manualmente al menú
-function manualBackToMenu() {
-    if (menuTimeout) {
-        clearTimeout(menuTimeout);
-        menuTimeout = null;
-    }
-    backToMenu();
-}
+            // Detener speech anterior y leer nuevo contenido
+            stopSpeaking();
+            speakText(document.getElementById(area + 'Direction').innerText.replace('Volver al menú', ''));
+
+            // Iniciar nuevo timeout (10 segundos para volver al menú)
+            menuTimeout = setTimeout(backToMenu, 10000);
+        }
+
+        function backToMenu() {
+            // Cancelar el timeout si existe
+            if (menuTimeout) {
+                clearTimeout(menuTimeout);
+                menuTimeout = null;
+            }
+
+            // Ocultar todas las direcciones
+            const directions = document.querySelectorAll('.direction-container');
+            directions.forEach(direction => {
+                direction.style.display = 'none';
+            });
+
+            // Mostrar menú principal
+            document.getElementById('menuContainer').style.display = 'grid';
+
+            // Detener speech y leer texto del menú
+            stopSpeaking();
+            speakText(document.getElementById('mainTitle').innerText + '. ' + document.getElementById('subTitle').innerText);
+        }
+
+        // También deberías llamar a clearTimeout cuando el usuario vuelva manualmente al menú
+        function manualBackToMenu() {
+            if (menuTimeout) {
+                clearTimeout(menuTimeout);
+                menuTimeout = null;
+            }
+            backToMenu();
+        }
         // Funcionalidad de accesibilidad - Texto a voz
         let speechSynthesis = window.speechSynthesis;
-        
+
         function speakText(text) {
             stopSpeaking();
             const utterance = new SpeechSynthesisUtterance(text);
@@ -407,13 +421,13 @@ function manualBackToMenu() {
             utterance.pitch = 1.0;
             speechSynthesis.speak(utterance);
         }
-        
+
         function stopSpeaking() {
             speechSynthesis.cancel();
         }
-        
+
         // Event listeners para botones de accesibilidad
-        document.getElementById('speakBtn').addEventListener('click', function() {
+        document.getElementById('speakBtn').addEventListener('click', function () {
             const activeDirection = document.querySelector('.direction-container[style*="display: block"]');
             if (activeDirection) {
                 speakText(activeDirection.innerText.replace('Volver al menú', ''));
@@ -421,11 +435,11 @@ function manualBackToMenu() {
                 speakText(document.getElementById('mainTitle').innerText + '. ' + document.getElementById('subTitle').innerText);
             }
         });
-        
+
         document.getElementById('stopSpeakBtn').addEventListener('click', stopSpeaking);
-        
+
         // Control de tamaño de texto
-        document.getElementById('increaseTextBtn').addEventListener('click', function() {
+        document.getElementById('increaseTextBtn').addEventListener('click', function () {
             document.body.classList.toggle('text-large');
             if (document.body.classList.contains('text-xlarge')) {
                 document.body.classList.remove('text-xlarge');
@@ -437,18 +451,19 @@ function manualBackToMenu() {
                 document.body.classList.add('text-large');
             }
         });
-        
-        document.getElementById('decreaseTextBtn').addEventListener('click', function() {
+
+        document.getElementById('decreaseTextBtn').addEventListener('click', function () {
             document.body.classList.remove('text-large', 'text-xlarge');
         });
-        
+
         // Alto contraste
-        document.getElementById('contrastBtn').addEventListener('click', function() {
+        document.getElementById('contrastBtn').addEventListener('click', function () {
             document.body.classList.toggle('high-contrast');
         });
-        
+
+
         // Pantalla completa
-        document.getElementById('fullscreen-btn').addEventListener('click', function() {
+        document.getElementById('fullscreen-btn').addEventListener('click', function () {
             if (!document.fullscreenElement) {
                 document.documentElement.requestFullscreen().catch(err => {
                     console.error(`Error al intentar entrar en modo pantalla completa: ${err.message}`);
@@ -463,18 +478,33 @@ function manualBackToMenu() {
                 }
             }
         });
-        
+        // Escuchar cambios en el estado de pantalla completa
+        document.addEventListener('fullscreenchange', function () {
+            const accessibilityBar = document.querySelector('.accessibility-bar');
+            const fullscreenBtn = document.getElementById('fullscreen-btn');
+
+            if (document.fullscreenElement) {
+                // Ocultar elementos cuando está en pantalla completa
+                fullscreenBtn.style.display = 'none';
+                accessibilityBar.style.display = 'none';
+            } else {
+                // Mostrar elementos cuando sale de pantalla completa
+                fullscreenBtn.style.display = 'block';
+                accessibilityBar.style.display = 'block'; // o 'flex' dependiendo de tu CSS
+            }
+        });
+
         // Hablar el texto inicial al cargar la página
-        window.addEventListener('load', function() {
+        window.addEventListener('load', function () {
             setTimeout(() => {
                 speakText(document.getElementById('mainTitle').innerText + '. ' + document.getElementById('subTitle').innerText);
             }, 1000);
         });
-        
+
         // Hablar el texto al enfocar elementos
         const focusableElements = document.querySelectorAll('button, [tabindex="0"]');
         focusableElements.forEach(element => {
-            element.addEventListener('focus', function() {
+            element.addEventListener('focus', function () {
                 if (this.textContent) {
                     speakText(this.textContent);
                 } else if (this.getAttribute('aria-label')) {
@@ -484,5 +514,5 @@ function manualBackToMenu() {
         });
     </script>
 </body>
-</html>
 
+</html>
